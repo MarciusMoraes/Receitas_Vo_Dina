@@ -207,52 +207,6 @@
     padding-right: 26px;
   }
 
-  /* ============================================================
-     RECEITAS EM DESTAQUE
-     ============================================================ */
-
-  .featured-section {
-    width: 100%;
-    margin-top: var(--space-5);
-  }
-
-  .featured-title {
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-size: clamp(1.3rem, 5vw, 1.6rem);
-    letter-spacing: 0.5px;
-    color: var(--color-brown);
-    text-shadow: 2px 2px 0 rgba(242, 167, 27, 0.55);
-    margin: 0 0 var(--space-3);
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  .link-btn.recipe-item {
-    background: var(--color-cream);
-    color: var(--color-brown);
-  }
-
-  .link-btn.recipe-item .link-text {
-    padding-right: 44px;
-  }
-
-  .recipe-thumb {
-    flex: 0 0 auto;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--color-cream);
-    background: var(--color-bg-2);
-  }
-
-  .recipe-thumb--fallback {
-    background: var(--color-bg-2);
-    color: transparent;
-    font-size: 0;
-  }
-
   footer {
     margin-top: var(--space-6);
     text-align: center;
@@ -290,42 +244,6 @@
       <span class="link-text">Siga no Instagram</span>
     </a>
   </nav>
-
-  <section class="featured-section" aria-labelledby="featured-title">
-    <h2 id="featured-title" class="featured-title">Receitas em Destaque</h2>
-
-    <!-- ============================================================
-         RECEITAS EM DESTAQUE — edite nome (alt + texto), imagem (src)
-         e link (href) de cada item aqui. Adicione ou remova itens
-         copiando o bloco <a class="link-btn recipe-item">...</a>.
-         ============================================================ -->
-    <nav class="links" aria-label="Receitas em destaque">
-      <a class="link-btn recipe-item" href="https://www.youtube.com/watch?v=PLACEHOLDER_BOLO_CENOURA" target="_blank" rel="noopener noreferrer">
-        <img class="recipe-thumb" src="img/receitas/bolo-cenoura.jpg" alt="Bolo de Cenoura com Chocolate" loading="lazy" onerror="this.onerror=null; this.removeAttribute('src'); this.classList.add('recipe-thumb--fallback');">
-        <span class="link-text">Bolo de Cenoura com Chocolate</span>
-      </a>
-
-      <a class="link-btn recipe-item" href="https://www.youtube.com/watch?v=PLACEHOLDER_PUDIM_LEITE_CONDENSADO" target="_blank" rel="noopener noreferrer">
-        <img class="recipe-thumb" src="img/receitas/pudim-leite-condensado.jpg" alt="Pudim de Leite Condensado" loading="lazy" onerror="this.onerror=null; this.removeAttribute('src'); this.classList.add('recipe-thumb--fallback');">
-        <span class="link-text">Pudim de Leite Condensado</span>
-      </a>
-
-      <a class="link-btn recipe-item" href="https://www.youtube.com/watch?v=PLACEHOLDER_PAO_CASEIRO" target="_blank" rel="noopener noreferrer">
-        <img class="recipe-thumb" src="img/receitas/pao-caseiro.jpg" alt="Pão Caseiro" loading="lazy" onerror="this.onerror=null; this.removeAttribute('src'); this.classList.add('recipe-thumb--fallback');">
-        <span class="link-text">Pão Caseiro</span>
-      </a>
-
-      <a class="link-btn recipe-item" href="https://www.youtube.com/watch?v=PLACEHOLDER_ARROZ_DOCE" target="_blank" rel="noopener noreferrer">
-        <img class="recipe-thumb" src="img/receitas/arroz-doce.jpg" alt="Arroz Doce" loading="lazy" onerror="this.onerror=null; this.removeAttribute('src'); this.classList.add('recipe-thumb--fallback');">
-        <span class="link-text">Arroz Doce</span>
-      </a>
-
-      <a class="link-btn recipe-item" href="https://www.youtube.com/watch?v=PLACEHOLDER_BOLINHO_DE_CHUVA" target="_blank" rel="noopener noreferrer">
-        <img class="recipe-thumb" src="img/receitas/bolinho-de-chuva.jpg" alt="Bolinho de Chuva" loading="lazy" onerror="this.onerror=null; this.removeAttribute('src'); this.classList.add('recipe-thumb--fallback');">
-        <span class="link-text">Bolinho de Chuva</span>
-      </a>
-    </nav>
-  </section>
 
   <footer>
     <p>© <span id="year">2026</span> Receitas Da Vó Dina</p>
