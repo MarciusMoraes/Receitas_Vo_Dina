@@ -1,0 +1,184 @@
+:root {
+  --color-bg-1: #FBF3E3;
+  --color-bg-2: #F6E4C1;
+  --color-cream: #FFFBF2;
+  --color-gold: #F2A71B;
+  --color-gold-dark: #D68A0C;
+  --color-red: #C0392B;
+  --color-red-dark: #9C2C20;
+  --color-brown: #3E2A1E;
+  --color-brown-soft: #6B5344;
+  --color-green: #4C7A3D;
+  --color-white: #FFFFFF;
+
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 14px;
+  --space-4: 20px;
+  --space-5: 28px;
+  --space-6: 40px;
+
+  --shadow-btn: 0 6px 0 var(--color-gold-dark), 0 10px 18px rgba(62, 42, 30, 0.18);
+  --shadow-btn-red: 0 6px 0 var(--color-red-dark), 0 10px 18px rgba(62, 42, 30, 0.18);
+  --shadow-card: 0 12px 30px rgba(62, 42, 30, 0.12);
+
+  --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--color-brown);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(242, 167, 27, 0.25), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(192, 57, 43, 0.12), transparent 50%),
+    linear-gradient(180deg, var(--color-bg-1), var(--color-bg-2));
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  padding: var(--space-5) var(--space-4) var(--space-6);
+}
+
+.page {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page { animation: none; opacity: 1; transform: none; }
+  .link-btn { transition: none !important; }
+}
+
+.avatar-wrap {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  padding: 5px;
+  background: conic-gradient(from 180deg, var(--color-gold), var(--color-red), var(--color-gold));
+  box-shadow: 0 0 0 6px rgba(255, 251, 242, 0.7), 0 10px 24px rgba(62, 42, 30, 0.22);
+  margin-bottom: var(--space-4);
+}
+
+.avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: var(--color-cream);
+  border: 3px solid var(--color-cream);
+}
+
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 8vw, 2.6rem);
+  letter-spacing: 0.5px;
+  color: var(--color-brown);
+  text-shadow: 2px 2px 0 rgba(242, 167, 27, 0.55);
+  margin: 0 0 var(--space-1);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.handle {
+  font-weight: 700;
+  color: var(--color-red);
+  font-size: 1rem;
+  margin: 0 0 var(--space-3);
+}
+
+.tagline {
+  text-align: center;
+  font-size: 1.0625rem;
+  line-height: 1.5;
+  color: var(--color-brown-soft);
+  max-width: 34ch;
+  margin: 0 0 var(--space-5);
+}
+
+.links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.link-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 64px;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  color: var(--color-white);
+  background: var(--color-gold);
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link-btn.secondary {
+  background: var(--color-red);
+  box-shadow: var(--shadow-btn-red);
+}
+
+.link-btn:hover {
+  transform: translateY(-3px);
+}
+
+.link-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 var(--color-gold-dark), 0 4px 10px rgba(62, 42, 30, 0.18);
+}
+
+.link-btn.secondary:active {
+  box-shadow: 0 2px 0 var(--color-red-dark), 0 4px 10px rgba(62, 42, 30, 0.18);
+}
+
+.link-btn:focus-visible {
+  outline: 3px solid var(--color-brown);
+  outline-offset: 3px;
+}
+
+.icon {
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+}
+
+.link-text {
+  flex: 1 1 auto;
+  text-align: center;
+  padding-right: 26px;
+}
+
+footer {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: rgba(62, 42, 30, 0.55);
+}
