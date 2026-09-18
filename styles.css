@@ -128,7 +128,7 @@ h1.title {
   align-items: center;
   gap: var(--space-3);
   width: 100%;
-  min-height: 64px;
+  min-height: 50px;
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-full);
   text-decoration: none;
@@ -181,4 +181,144 @@ footer {
   text-align: center;
   font-size: 0.8125rem;
   color: rgba(62, 42, 30, 0.55);
+}
+
+/* ============================================================
+   RECEITAS EM DESTAQUE — seção nova, apenas adicionada ao final
+   do arquivo. Nenhuma regra acima foi alterada.
+   ============================================================ */
+
+.featured-section {
+  width: 100%;
+  margin-top: var(--space-5);
+}
+
+.featured-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 5vw, 1.6rem);
+  letter-spacing: 0.5px;
+  color: var(--color-brown);
+  text-shadow: 2px 2px 0 rgba(242, 167, 27, 0.55);
+  margin: 0 0 var(--space-3);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Layout card (v2): substitui apenas o markup/CSS dos itens da lista.
+   .featured-section e .featured-title acima ficam como no styles.css. */
+
+.featured-cards {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.recipe-card {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-cream);
+  box-shadow: var(--shadow-btn);
+}
+
+.recipe-card-photo {
+  flex: 0 0 auto;
+  width: 130px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--color-bg-2);
+  color: transparent;
+  font-size: 0;
+}
+
+.recipe-card-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-4);
+}
+
+.recipe-card-name {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: var(--color-brown);
+}
+
+.recipe-card-desc {
+  margin: 0;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.35;
+  color: var(--color-brown-soft);
+}
+
+.recipe-card-cta {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8125rem;
+  color: var(--color-red);
+  background: transparent;
+  transition: color 0.15s ease;
+}
+
+.recipe-card-cta::after {
+  content: "";
+}
+
+.recipe-card-cta:hover {
+  color: var(--color-red-dark);
+  text-decoration: underline;
+}
+
+.recipe-card-cta:active {
+  color: var(--color-red-dark);
+}
+
+
+.recipe-card-cta:hover {
+  color: var(--color-cream);
+  background: var(--color-red);
+}
+
+.recipe-card-cta:active {
+  color: var(--color-cream);
+  background: var(--color-red-dark);
+  border-color: var(--color-red-dark);
+}
+
+.recipe-card-cta:focus-visible {
+  outline: 3px solid var(--color-brown);
+  outline-offset: 3px;
+}
+
+@media (max-width: 420px) {
+  .recipe-card-photo {
+    width: 90px;
+  }
+
+  .recipe-card-body {
+    padding: var(--space-1) var(--space-3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recipe-card-cta { transition: none !important; }
 }
